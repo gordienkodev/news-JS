@@ -45,6 +45,6 @@ module.exports = ({ mode, envFile = '.env' } = {}) => {
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
 
     return merge(baseConfig, envConfig, {
-        plugins: [new DotenvWebpackPlugin({ path: envFile })],
+        plugins: [new DotenvWebpackPlugin({ path: envFile, systemvars: true })],
     });
 };
