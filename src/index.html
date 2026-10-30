@@ -12,6 +12,11 @@
         </header>
         <main>
             <div class="sources buttons"></div>
+            <nav class="sources__pagination" aria-label="Source pages" hidden>
+                <button class="sources__previous" type="button" aria-label="Previous source page">←</button>
+                <span class="sources__page" role="status"></span>
+                <button class="sources__next" type="button" aria-label="Next source page">→</button>
+            </nav>
             <div class="news"></div>
         </main>
         <footer>
@@ -19,9 +24,9 @@
         </footer>
 
         <template id="sourceItemTemp">
-            <div class="source__item">
+            <button class="source__item" type="button" aria-pressed="false">
                 <span class="source__item-name"></span>
-            </div>
+            </button>
         </template>
 
         <template id="newsItemTemp">
