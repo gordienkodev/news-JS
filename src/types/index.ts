@@ -1,4 +1,4 @@
-export interface INewsSource {
+export interface NewsSource {
     id: string;
     name: string;
     description: string;
@@ -15,7 +15,7 @@ export interface INewsSource {
     title?: string;
 }
 
-export interface INewsArticle {
+export interface NewsArticle {
     source: {
         id: string | null;
         name: string;
@@ -29,7 +29,7 @@ export interface INewsArticle {
     content: string | null;
 }
 
-export interface IApiResponse {
+export interface ApiResponse {
     status: string;
-    sources: INewsSource[];
+    sources: NewsSource[];
 }
