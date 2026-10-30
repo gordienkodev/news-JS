@@ -6,13 +6,6 @@ export interface NewsSource {
     category: string;
     language: string;
     country: string;
-    urlToImage?: string;
-    author?: string;
-    source?: {
-        name: string;
-    };
-    publishedAt?: string;
-    title?: string;
 }
 
 export interface NewsArticle {
@@ -30,6 +23,14 @@ export interface NewsArticle {
 }
 
 export interface ApiResponse {
-    status: string;
+    status: 'ok';
+}
+
+export interface SourcesResponse extends ApiResponse {
     sources: NewsSource[];
+}
+
+export interface NewsResponse extends ApiResponse {
+    totalResults: number;
+    articles: NewsArticle[];
 }
