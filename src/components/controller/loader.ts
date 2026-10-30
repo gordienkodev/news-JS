@@ -5,6 +5,11 @@ interface LoaderRequest {
     options?: LoaderOptions;
 }
 
+export enum HttpStatus {
+    Unauthorized = 401,
+    NotFound = 404,
+}
+
 type LoaderCallback<T> = (data: T) => void;
 
 class Loader {
@@ -27,7 +32,7 @@ class Loader {
 
     errorHandler(res: Response): Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === HttpStatus.Unauthorized || res.status === HttpStatus.NotFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
