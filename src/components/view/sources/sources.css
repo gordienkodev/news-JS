@@ -11,6 +11,7 @@
 }
 
 .source__item {
+    flex-shrink: 0;
     background: none;
     border: 2px solid #30c5ff;
     font: inherit;
@@ -33,4 +34,14 @@
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+    .sources {
+        height: 90px;
+    }
+
+    .source__item {
+        padding: 0.75em 1em;
+    }
 }
